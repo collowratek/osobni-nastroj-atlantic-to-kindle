@@ -1,7 +1,15 @@
 # Specifikace: Atlantic → Kindle
 
+## Metadata projektu
+- **Název repo:** `osobni-nastroj-atlantic-to-kindle`
+- **Kategorie:** osobni / nastroj
+- **Lokální složka:** atllantictokindle2-jirka (NEMĚNIT — repo název se liší od složky)
+- **Stav:** 🟢 AKTIVNÍ
+- **Autor:** Jiří Nekola + Claude Code
+- **Založeno:** 2026-03-28
+
 ## Co to je
-Nastroj na posilani clanku z The Atlantic na Kindle ctecku a email. Uzivatel je predplatitel The Atlantic.
+Nástroj na posílání článků z The Atlantic na Kindle čtečku a email. Uživatel je předplatitel The Atlantic.
 
 ## Problem
 1. The Atlantic nema nativni "Send to Kindle" funkci
@@ -107,11 +115,13 @@ Browser tab → content-script.js extrahuje clanek → popup.js posle na server 
 
 ### Credentials (.env)
 ```
-GMAIL_USER=jiri.nekola@gmail.com
-GMAIL_APP_PASSWORD=afjgcokhbajawjqe
-KINDLE_EMAIL=jiri.nekola@kindle.com
-MY_EMAIL=jiri.nekola@gmail.com
+GMAIL_USER=<gmail adresa>
+GMAIL_APP_PASSWORD=<app password z Google účtu — NIKDY NECOMMITOVAT>
+KINDLE_EMAIL=<kindle email z Amazon nastavení>
+MY_EMAIL=<osobní email pro kopii>
 ```
+
+> **BEZPEČNOST:** Skutečné hodnoty jsou v .env souboru (v .gitignore). NIKDY je nepsat do specifikace ani commitovat do gitu.
 
 (Atlantic heslo NENI potreba — extension pouziva browser session)
 

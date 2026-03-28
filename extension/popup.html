@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <!--
+    popup.html — Atlantic to Kindle
+    Minimalni popup pro Chrome Extension.
+    Cerveno-bily design inspirovany Atlantic brandingem.
+    Autor: Claude Code + Jiri Nekola, 2026-03-28
+  -->
+  <style>
+    /* === ZAKLADNI STYLY === */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 360px;
+      font-family: Georgia, 'Times New Roman', serif;
+      background: #fff;
+      color: #1a1a1a;
+      padding: 20px;
+    }
+
+    /* === HLAVICKA === */
+    .header {
+      text-align: center;
+      border-bottom: 3px solid #e2242a; /* Atlantic cervena */
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+
+    .header h1 {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #1a1a1a;
+    }
+
+    .header .subtitle {
+      font-size: 11px;
+      color: #888;
+      margin-top: 4px;
+      font-style: italic;
+    }
+
+    /* === INFO O CLANKU === */
+    .article-info {
+      margin-bottom: 16px;
+    }
+
+    .article-title {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+
+    .article-author {
+      font-size: 12px;
+      color: #666;
+      font-style: italic;
+    }
+
+    /* === TLACITKO === */
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background: #e2242a; /* Atlantic cervena */
+      color: #fff;
+      border: none;
+      font-family: Georgia, serif;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+      transition: background 0.2s;
+    }
+
+    .btn:hover { background: #c91e23; }
+    .btn:disabled { background: #ccc; cursor: not-allowed; }
+
+    /* === STAVY === */
+    .status {
+      text-align: center;
+      margin-top: 12px;
+      font-size: 12px;
+      min-height: 18px;
+    }
+
+    .status.loading { color: #888; }
+    .status.success { color: #2a7d2e; font-weight: 700; }
+    .status.error { color: #e2242a; }
+
+    /* === LOADING SPINNER === */
+    .spinner {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border: 2px solid #ccc;
+      border-top-color: #e2242a;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      vertical-align: middle;
+      margin-right: 6px;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* === PRAZDNY STAV === */
+    .empty-state {
+      text-align: center;
+      color: #888;
+      font-size: 13px;
+      padding: 20px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Hlavicka s nazvem extension -->
+  <div class="header">
+    <h1>Atlantic &rarr; Kindle</h1>
+    <div class="subtitle">Posli clanek na ctecku</div>
+  </div>
+
+  <!-- Info o clanku — naplni se z content scriptu -->
+  <div id="content">
+    <div class="empty-state">Nacitam clanek...</div>
+  </div>
+
+  <!-- Stavova hlaska -->
+  <div id="status" class="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Atlantic to Kindle",
+  "version": "1.0.0",
+  "description": "Posli clanek z The Atlantic na Kindle jednim kliknutim",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["*://*.theatlantic.com/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.theatlantic.com/*"],
+      "js": ["content-script.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

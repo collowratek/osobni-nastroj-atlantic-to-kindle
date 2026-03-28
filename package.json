@@ -1,0 +1,20 @@
+{
+  "name": "atlantic-to-kindle",
+  "version": "1.0.0",
+  "description": "Posli clanek z The Atlantic na Kindle jednim kliknutim",
+  "type": "module",
+  "scripts": {
+    "start": "node server/server.mjs",
+    "dev": "node --watch server/server.mjs"
+  },
+  "author": "Jiri Nekola + Claude Code",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "epub-gen-memory": "^1.1.1",
+    "express": "^4.21.2",
+    "nodemailer": "^6.9.16",
+    "puppeteer": "^23.11.1"
+  }
+}
